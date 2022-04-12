@@ -97,7 +97,7 @@ export default function Cal_Block(props) {
 				/>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;
 				<input
-					id="departure" 
+					id="departure"
 					value={
 						first_date != null &&
 						last_date != null &&
