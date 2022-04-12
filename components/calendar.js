@@ -6,7 +6,9 @@ import { useState, useEffect } from 'react';
 
 export default function Cal_Block(props){
     var booked_dates=[];
-    booked_dates.push(new Date(2022, 6, 5));
+    booked_dates[0]={booked_first:new Date(2022, 6, 5),booked_last:new Date(2022, 6, 15)};
+    booked_dates[1]={booked_first:new Date(2022, 4, 15),booked_last:new Date(2022, 5, 17)};
+    booked_dates[3]={booked_first:new Date(2022, 12, 15),booked_last:new Date(2023, 1, 3)};
 
 
     const [first_date, setFirst] = useState(null);
@@ -15,10 +17,10 @@ export default function Cal_Block(props){
         setFirst(prevDate => prevDate === null || new_date < prevDate || new_date.getDate() == last_date.getDate()   ? new_date : prevDate);
         setLast(new_date);
         
-        if (booked_dates.every(check_conflict))  setFirst(new_date) ;  // if conflict, set first and last dates to the new date (which will be after the conflict)
+        if (!booked_dates.every(check_conflict))  setFirst(new_date) ;  // if conflict, set first and last dates to the new date (which will be after the conflict)
 
         function check_conflict(booked_date) {
-            return first_date !=null && booked_date>=first_date && booked_date<=new_date;
+            if (first_date !=null) return !(booked_date.booked_first>=first_date && booked_date.booked_last<=new_date);
         }
 
        
@@ -71,6 +73,7 @@ export default function Cal_Block(props){
           
 
       </div>
+    <div  style={{margin:'100px auto',width:'600px'}}>Select a range of dates.<br/> Red days are already booked, you can not select over red days.<br/>Double-click to select a new start date, or use the Clear Dates button below.</div>
     <div className="date_box" style={{margin:'100px auto',width:'600px'}}><label>Arrival</label>&nbsp;<input id="arrival"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;<input id="departure"></input></div>
     <button style={{margin:'100px auto',width:'100px',display:'block    '}} onClick={clear_dates}>Clear Dates</button>
     </>
@@ -159,10 +162,12 @@ function Calendar(props){
     )
 
       function check_booked(booked_dates,day){
+            
 
-            return booked_dates.every(check_match);
+            if (day<=new Date())  return true; else return !booked_dates.every(check_match);    //  array.every only returns true if all check true, so inverse both conditions, then function returns true if any are true
             function check_match(booked_date) {
-                return (day.getFullYear() == booked_date.getFullYear() && day.getMonth() == booked_date.getMonth() && day.getDate()==booked_date.getDate())
+                console.log(day,booked_date.booked_first);
+                return !(booked_date.booked_first<=day && booked_date.booked_last>=day)
             }
       }
 
