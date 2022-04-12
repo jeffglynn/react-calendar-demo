@@ -104,14 +104,6 @@ export default function Cal_Block(props) {
 			</button>
 		</>
 	);
-
-	function clear_dates() {
-		// function for the Clear Dates button
-		setFirst(null);
-		setLast(null);
-		document.getElementById("arrival").value = ""; // could have used useRef hook
-		document.getElementById("departure").value = "";
-	}
 }
 
 function Calendar(props) {
