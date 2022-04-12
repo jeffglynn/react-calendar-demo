@@ -76,6 +76,7 @@ export default function Cal_Block(props){
               
               month={date.month}  //use object notation to get out
               year={date.year}
+              key={date.toString()}
               first_date ={first_date} 
               last_date ={last_date} 
               booked_dates ={booked_dates}
@@ -156,6 +157,7 @@ export default function Cal_Block(props){
                         onClick={props.passFunction }
                         booked={check_booked(props.booked_dates,day)}
                         day={day}
+                        key={day.toString()}
                         selected={ (day >= props.first_date && day <=props.last_date)  ? true : false}
                         style={day.getDate() === 1 ? cond_style : {}}
                          
