@@ -91,11 +91,11 @@ export default function Cal_Block(props) {
 				style={{ margin: "100px auto", width: "600px" }}
 			>
 				<label>Arrival</label>&nbsp;
-				<input id="arrival" value={props.first_date} />
+				<input id="arrival" value={first_date} />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;
 				<input
 					id="departure"
-					value={props.first_date == props.last_date ? null : props.last_date}
+					value={first_date == last_date ? null : last_date}
 				/>
 			</div>
 			<button
