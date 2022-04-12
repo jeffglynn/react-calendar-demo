@@ -91,11 +91,15 @@ export default function Cal_Block(props) {
 				style={{ margin: "100px auto", width: "600px" }}
 			>
 				<label>Arrival</label>&nbsp;
-				<input id="arrival" value={first_date} />
+				<input id="arrival" value={first_date.toDateString()} />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;
 				<input
 					id="departure"
-					value={first_date == last_date ? null : last_date}
+					value={
+						first_date.toDateString() === last_date.toDateString()
+							? null
+							: last_date.toDateString()
+					}
 				/>
 			</div>
 			<button
