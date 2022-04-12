@@ -189,7 +189,6 @@ function Calendar(props) {
 		if (day <= new Date()) return true;
 		else return !booked_dates.every(check_match); //  array.every only returns true if all check true, so inverse both conditions, then function returns true if any are true
 		function check_match(booked_date) {
-			console.log(day, booked_date.booked_first);
 			return !(
 				booked_date.booked_first <= day && booked_date.booked_last >= day
 			);
