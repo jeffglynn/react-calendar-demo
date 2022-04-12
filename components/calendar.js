@@ -59,9 +59,9 @@ export default function Cal_Block(props){
               month={date.month}  //use object notation to get out
               year={date.year}
               key={date.toString()}
-              first_date ={first_date} 
-              last_date ={last_date} 
-              booked_dates ={booked_dates}
+              first_date ={first_date} //pass through Calendar, used when rendering Day component to set 'selected' class
+              last_date ={last_date} //pass through Calendar, used when rendering Day component to set 'selected' class
+              booked_dates ={booked_dates} //pass through Calendar, used when rendering Day component to set 'booked' class
 
               />
          )}
@@ -77,7 +77,7 @@ export default function Cal_Block(props){
     function clear_dates(){  // function for the Clear Dates button
         setFirst(null);
         setLast(null);
-        document.getElementById('arrival').value ='';
+        document.getElementById('arrival').value ='';  // could have used useRef hook
         document.getElementById('departure').value ='';
     }
     
