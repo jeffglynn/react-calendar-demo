@@ -108,7 +108,7 @@ export default function Cal_Block(props) {
 				/>
 			</div>
 			<button
-				style={{ margin: "100px auto", width: "100px", display: "block    " }}
+				style={{ margin: "60px auto", width: "100px", display: "block    " }}
 				onClick={clear_dates}
 			>
 				Clear Dates
