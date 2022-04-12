@@ -89,7 +89,7 @@ export default function Cal_Block(props){
           
 
       </div>
-    <div class="date_box" style={{margin:'100px auto',width:'600px'}}><label>Arrival</label>&nbsp;<input id="arrival"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;<input id="departure"></input></div>
+    <div className="date_box" style={{margin:'100px auto',width:'600px'}}><label>Arrival</label>&nbsp;<input id="arrival"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;<input id="departure"></input></div>
     <button style={{margin:'100px auto',width:'100px',display:'block    '}} onClick={clear_dates}>Clear Dates</button>
     </>
 
