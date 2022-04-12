@@ -90,11 +90,13 @@ export default function Cal_Block(props) {
 				className="date_box"
 				style={{ margin: "100px auto", width: "600px" }}
 			>
-				<label>Arrival</label>&nbsp;<input id="arrival">props.first_date</input>
+				<label>Arrival</label>&nbsp;
+				<input id="arrival" value={props.first_date} />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Departure</label>&nbsp;
-				<input id="departure">
-					props.first_date == props.last_date ? null : props.last_date
-				</input>
+				<input
+					id="departure"
+					value={props.first_date == props.last_date ? null : props.last_date}
+				/>
 			</div>
 			<button
 				style={{ margin: "100px auto", width: "100px", display: "block    " }}
