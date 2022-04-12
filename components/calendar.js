@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 
 export default function Cal_Block(props){
     var booked_dates=[];
+    // Just hard coded dates for now.
     booked_dates[0]={booked_first:new Date(2022, 6, 5),booked_last:new Date(2022, 6, 15)};
     booked_dates[1]={booked_first:new Date(2022, 4, 15),booked_last:new Date(2022, 5, 17)};
     booked_dates[3]={booked_first:new Date(2022, 12, 15),booked_last:new Date(2023, 1, 3)};
@@ -42,14 +43,13 @@ export default function Cal_Block(props){
     var month = today.getMonth();
     var year = today.getFullYear();
     var months_years = [];
-    for (var i = 1; i <= 12; i++) {
-        
+    for (var i = 1; i <= 12; i++) { // build array of month integers
         months_years.push({month:month,year:year});  // push an object in
         month++;
         if (month>11) {month=0;year++}  // JS months start at 0
     }
-    //console.log( months );
-    return (
+    
+    return (    //
         <>
         <div className={styles.months_container}>
                   
@@ -119,6 +119,7 @@ function Calendar(props){
     return(
         <>
         <style>{`
+            .day {background-color:#A9A9A9}
             .selected {background-color:blue}
             .booked {background-color:red}
             `}
@@ -193,7 +194,7 @@ function Day_box(props) {
     return(
         <>
         
-        <button className={`${props.selected ? 'selected' : ''} ${props.booked ? 'booked' : ''}`}  
+        <button className={`${props.selected ? 'selected' : ''} ${props.booked ? 'booked' : ''} day`}  
                 onClick={props.booked ? undefined : ()=>props.onClick(props.day)}  // disable click function for days that are booked
                 style={props.style}
                
