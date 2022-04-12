@@ -3,24 +3,6 @@ import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import styles from '../styles/Home.module.css';
 import { useState, useEffect } from 'react';
 
-function Day_box(props) {
-
-    
-    return(
-        <>
-        
-        <button className={`${props.selected ? 'selected' : ''} ${props.booked ? 'booked' : ''}`}  
-                onClick={props.booked ? undefined : ()=>props.onClick(props.day)}  // disable click function for days that are booked
-                style={props.style}
-               
-                >
-            {props.day.getDate()}
-        </button>
-        </>
-    )
-
- 
-}
 
 export default function Cal_Block(props){
     var booked_dates=[];
@@ -105,7 +87,7 @@ export default function Cal_Block(props){
 
 }
 
- function Calendar(props){
+function Calendar(props){
     
     
 
@@ -198,4 +180,23 @@ export default function Cal_Block(props){
       }
     
 
+}
+
+function Day_box(props) {
+
+    
+    return(
+        <>
+        
+        <button className={`${props.selected ? 'selected' : ''} ${props.booked ? 'booked' : ''}`}  
+                onClick={props.booked ? undefined : ()=>props.onClick(props.day)}  // disable click function for days that are booked
+                style={props.style}
+               
+                >
+            {props.day.getDate()}
+        </button>
+        </>
+    )
+
+ 
 }
