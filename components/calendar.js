@@ -8,14 +8,14 @@ export default function Cal_Block(props) {
 	// Just hard coded dates for now.
 	booked_dates[0] = {
 		booked_first: new Date(2023, 9, 5),
-		booked_last: new Date(2022, 9, 15),
+		booked_last: new Date(2023, 9, 15),
 	};
 	booked_dates[1] = {
-		booked_first: new Date(2022, 10, 15),
-		booked_last: new Date(2022, 10, 17),
+		booked_first: new Date(2023, 10, 15),
+		booked_last: new Date(2023, 10, 17),
 	};
 	booked_dates[3] = {
-		booked_first: new Date(2022, 11, 15),
+		booked_first: new Date(2023, 11, 15),
 		booked_last: new Date(2024, 4, 3),
 	};
 
